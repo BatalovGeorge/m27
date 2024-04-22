@@ -12,8 +12,9 @@ private:
     std::multimap<bool,ElfHouse*> _houses;
 public:
     ElfBranch(const int& housesAmount);
-    void changeStatus(const std::string& elfName,ElfHouse* house);
     const std::multimap<bool, ElfHouse *> &houses() const;
+    void getNeighbors(const ElfHouse* house);
+    void changeStatus(const std::string& elfName,ElfHouse* house);
 };
 
 #endif // ELFBRANCH_H

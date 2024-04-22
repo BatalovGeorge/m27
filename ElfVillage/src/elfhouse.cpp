@@ -1,10 +1,17 @@
 #include "elfhouse.h"
 
+ElfHouse::ElfHouse()
+{
+
+}
+
+
 void ElfHouse::setName(const std::string &newName)
 {
     _name=="NONE"?this->_isInhabited=false:this->_isInhabited=true;
     _name = newName;
 }
+
 
 ElfHouse::ElfHouse(std::string name):_name(name)
 {

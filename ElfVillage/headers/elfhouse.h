@@ -8,7 +8,7 @@ class ElfHouse
     bool _isInhabited;
     std::string _name;
 public:
-
+    ElfHouse();
     ElfHouse(std::string name);
 
     const std::string &name() const;
