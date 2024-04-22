@@ -6,14 +6,15 @@
 
 #include "elfhouse.h"
 
+
 class ElfBranch
 {
 private:
-    std::multimap<bool,ElfHouse*> _houses;
+    std::vector<ElfHouse*> _houses;
 public:
     ElfBranch(const int& housesAmount);
-    const std::multimap<bool, ElfHouse *> &houses() const;
-    void getNeighbors(const ElfHouse* house);
+
+    const std::vector<ElfHouse*> &houses() const;
     void changeStatus(const std::string& elfName,ElfHouse* house);
 };
 

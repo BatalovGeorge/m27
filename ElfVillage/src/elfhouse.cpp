@@ -1,14 +1,9 @@
 #include "elfhouse.h"
 
-ElfHouse::ElfHouse()
-{
-
-}
-
-
 void ElfHouse::setName(const std::string &newName)
 {
-    _name=="NONE"?this->_isInhabited=false:this->_isInhabited=true;
+    //can be nullptr, catch reference error lul
+    _name=="None"?this->_isInhabited=false:this->_isInhabited=true;
     _name = newName;
 }
 
