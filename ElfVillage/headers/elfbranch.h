@@ -16,6 +16,8 @@ public:
 
     const std::vector<ElfHouse*> &houses() const;
     void changeStatus(const std::string& elfName,ElfHouse* house);
+
+
 };
 
 #endif // ELFBRANCH_H

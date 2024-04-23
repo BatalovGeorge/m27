@@ -16,7 +16,7 @@ public:
     ElfTree(){};
 
     void makeTree();
-    const std::vector<ElfBranch *> &branches() const;
+    const std::vector<ElfBranch*> &branches() const;
     std::string getElfName();
     void getNeighbors(const std::string& name);
 

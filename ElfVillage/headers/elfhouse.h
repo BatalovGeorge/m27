@@ -14,6 +14,7 @@ public:
     const std::string &name() const;
     bool isInhabited() const;
     void setName(const std::string &newName);
+
 };
 
 #endif // ELFHOUSE_H

@@ -7,7 +7,6 @@ void ElfHouse::setName(const std::string &newName)
     _name = newName;
 }
 
-
 ElfHouse::ElfHouse(std::string name):_name(name)
 {
     setName(name);

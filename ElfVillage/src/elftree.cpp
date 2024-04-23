@@ -13,7 +13,7 @@ bool isNonPositive(const int& number)
 
 void ElfTree::makeTree()
 {
-    int branches = getRandomValue(1,2);
+    int branches = 2;
 
     std::cout<<"Random generated amount of branches:"<<branches<<std::endl;
 
@@ -44,22 +44,28 @@ void ElfTree::makeTree()
 
 void ElfTree::getNeighbors(const std::string& name)
 {
+    std::string prevNeighbor;
+    std::string postNeighbor;
+
     for(size_t branch=0;branch<branches().size();branch++)
     {
         for(size_t house=0;house<branches().at(branch)->houses().size();house++)
         {
             if(branches().at(branch)->houses().at(house)->name()==name)
             {
-                auto prevNeighbor=branches().at(branch)->houses().at(house--)->name();
-                auto postNeighbor =branches().at(branch)->houses().at(house++)->name();
-
-                std::cout<<"PREV: "<<prevNeighbor;
-                std::cout<<"; POST: "<<postNeighbor;
+                if(house>0)
+                {
+                    prevNeighbor=branches().at(branch)->houses().at(house-1)->name();
+                    std::cout<<"PREV: "<<prevNeighbor<<std::endl;
+                }
+                if(house<branches().at(branch)->houses().size()-1)
+                {
+                    postNeighbor=branches().at(branch)->houses().at(house+1)->name();
+                    std::cout<<"POST: "<<postNeighbor<<std::endl;
+                }
             }
         }
     }
-
-
 }
 
 
