@@ -4,10 +4,8 @@ add_executable(ElfVillage
     main.cpp
     elftree.cpp
     elfbranch.cpp
-    elfhouse.cpp
 
     ${headers}/elfbranch.h
-    ${headers}/elfhouse.h
     ${headers}/elftree.h
 )
 

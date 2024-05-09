@@ -10,7 +10,6 @@
 class CEO{
 private:
     std::vector<Manager*> _managers;
-    int _tasksCount;
 public:
     CEO(int managerCount, int workersCount);
     ~CEO(){};

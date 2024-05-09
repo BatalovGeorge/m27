@@ -10,7 +10,6 @@ bool isNonPositive(const int& number)
     return (number <= 0);
 }
 
-
 void ElfTree::makeTree()
 {
     int branches = 2;
@@ -25,10 +24,6 @@ void ElfTree::makeTree()
         std::cout<<"Generated amount of houses:"<<houses<<" on branch "<<i<<std::endl;
         i++;
         ElfBranch* branch = new ElfBranch(houses);
-        for(auto house: branch->houses())
-        {
-            branch->changeStatus(getElfName(),house);
-        }
 
         _branches.push_back(branch);
         branches--;
@@ -38,36 +33,20 @@ void ElfTree::makeTree()
     std::string elf = getElfName();
     getNeighbors(elf);
 
-
-
 }
 
 void ElfTree::getNeighbors(const std::string& name)
 {
-    std::string prevNeighbor;
-    std::string postNeighbor;
+    auto branch = std::find_if(branches().begin(),branches().end(),[&]( ElfBranch& brnch){
+    return brnch.findName(name);
+    });
 
-    for(size_t branch=0;branch<branches().size();branch++)
+    if(branch!=branches().end())
     {
-        for(size_t house=0;house<branches().at(branch)->houses().size();house++)
-        {
-            if(branches().at(branch)->houses().at(house)->name()==name)
-            {
-                if(house>0)
-                {
-                    prevNeighbor=branches().at(branch)->houses().at(house-1)->name();
-                    std::cout<<"PREV: "<<prevNeighbor<<std::endl;
-                }
-                if(house<branches().at(branch)->houses().size()-1)
-                {
-                    postNeighbor=branches().at(branch)->houses().at(house+1)->name();
-                    std::cout<<"POST: "<<postNeighbor<<std::endl;
-                }
-            }
-        }
+        int indexBranch = std::distance(branches().begin(),branch);
+        std::cout<<branches().at(indexBranch)->houses().at()
     }
 }
-
 
 const std::vector<ElfBranch*> &ElfTree::branches() const
 {
