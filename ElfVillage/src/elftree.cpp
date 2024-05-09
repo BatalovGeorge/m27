@@ -37,14 +37,9 @@ void ElfTree::makeTree()
 
 void ElfTree::getNeighbors(const std::string& name)
 {
-    auto branch = std::find_if(branches().begin(),branches().end(),[&]( ElfBranch& brnch){
-    return brnch.findName(name);
-    });
-
-    if(branch!=branches().end())
+    for(const auto& branch:branches())
     {
-        int indexBranch = std::distance(branches().begin(),branch);
-        std::cout<<branches().at(indexBranch)->houses().at()
+        branch->findNeighbor(name);
     }
 }
 
