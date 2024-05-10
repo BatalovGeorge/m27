@@ -11,13 +11,12 @@ class ElfBranch
 private:
     std::vector<std::string> _houses;
 public:
-    ElfBranch(const int& housesAmount);
+    ElfBranch(const int& housesAmounts);
 
-    [[nodiscard]]const std::vector<std::string> &houses() const;
+    [[nodiscard]]   const std::vector<std::string> &houses() const;
     void changeStatus(const std::string& elfName,const int& elfNum);
     void findNeighbor(const std::string& nameElf);
     void check_valuable(int,int);
-
 };
 
 #endif // ELFBRANCH_H
